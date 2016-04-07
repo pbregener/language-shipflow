@@ -1,6 +1,6 @@
 {
   "name": "language-shipflow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shipflow command file syntax highlighting in Atom",
   "engines": {
     "atom": "*"

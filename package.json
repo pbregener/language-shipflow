@@ -1,0 +1,17 @@
+{
+  "name": "language-shipflow",
+  "version": "0.0.0",
+  "description": "Shipflow command file syntax highlighting in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbregener/language-shipflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pbregener/language-shipflow/issues"
+  },
+  "license": "MIT"
+}

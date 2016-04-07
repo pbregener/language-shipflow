@@ -1,0 +1,74 @@
+'scopeName': 'source.shipflow'
+'name': 'Shipflow'
+'fileTypes': []
+'firstLineMatch': '^(xflo)'
+
+'patterns': [
+  {
+    # Numeric constant
+    'match': '[+\\-]?(?:0|[1-9]\d*)(?:\\.\\d*)?(?:[eE][+\\-]?\\d+)?'
+    'name': 'constant.numeric.shipflow'
+  },
+  {
+    # Single quoted string
+    'begin': '\''
+    'end': '\''
+    'name': 'string.quoted.single.shipflow'
+  },
+  {
+    # Double quoted string
+    'begin': '\"'
+    'end': '\"'
+    'name': 'string.quoted.double.shipflow'
+  },
+  {
+    # Comment
+    'begin': '/'
+    'end': '\\n'
+    'name': 'comment.line.slash.shipflow'
+  },
+  {
+    # Modules
+    'match': '\\b((xflo|xmes|xpan|xbou|xgri|xcha|xpos)\\w?)|(end)\\b'
+    'name': 'entity.name.section.shipflow'
+  },
+  {
+    # Commands
+    'begin': '\\b(\\w*)\\b\\s*\\('
+    'beginCaptures':
+        '1':
+          'name': 'keyword.control.shipflow'
+        '2':
+          'name': 'keyword.other.shipflow'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+    'end': '[\\),\\n]'
+    'endCaptures':
+      '1':
+          'name': "keyword.other.shipflow"
+  },
+  {
+    # Keywords
+#      'match': '\\b\\w*[\\b,\\,,\\=]'
+#      'name': 'entity.name.tag.shipflow'
+      'begin': '\\b\\w*'
+      'end': '[\\b,\\,,\\=,\\s,\\[,\\],\\{,\\}]'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.shipflow'
+
+      'patterns': [
+        {
+          'include': '$self'
+        }
+        ]
+  },
+  {
+    # Operators
+    'match': '[\\=]'
+    'name': 'keyword.operator.assignment.shipflow'
+  }
+]

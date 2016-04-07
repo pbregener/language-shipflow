@@ -14,12 +14,26 @@
     'begin': '\''
     'end': '\''
     'name': 'string.quoted.single.shipflow'
+    'patterns': [
+      {
+        # EXTPROP Tags
+        'match': '\\$\\(\\w*\\)'
+        'name': 'entity.name.type.shipflow'
+      }
+      ]
   },
   {
     # Double quoted string
     'begin': '\"'
     'end': '\"'
     'name': 'string.quoted.double.shipflow'
+    'patterns': [
+      {
+        # EXTPROP Tags
+        'match': '\\$\\(\\w*\\)'
+        'name': 'entity.name.type.shipflow'
+      }
+      ]
   },
   {
     # Comment
@@ -52,8 +66,6 @@
   },
   {
     # Keywords
-#      'match': '\\b\\w*[\\b,\\,,\\=]'
-#      'name': 'entity.name.tag.shipflow'
       'begin': '\\b\\w*'
       'end': '[\\b,\\,,\\=,\\s,\\[,\\],\\{,\\}]'
       'beginCaptures':
